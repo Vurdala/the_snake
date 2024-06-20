@@ -130,13 +130,13 @@ class Snake(GameObject):
         """Обновление позиции змейки."""
         head_now = self.get_head_position()
         coordinate_x, coordinate_y = head_now
-        new_head = (coordinate_x + self.direction[0] * GRID_WIDTH,
-                    coordinate_y + self.direction[1] * GRID_HEIGHT)
+        new_head = (coordinate_x + self.direction[0] * GRID_SIZE,
+                    coordinate_y + self.direction[1] * GRID_SIZE)
         if new_head[0] < 0 or new_head[0] > SCREEN_WIDTH:
             new_head = ((coordinate_x + self.direction[0]) % SCREEN_WIDTH,
-                        coordinate_y + self.direction[1] * GRID_HEIGHT)
+                        coordinate_y + self.direction[1] * GRID_SIZE)
         elif new_head[1] < 0 or new_head[1] > SCREEN_HEIGHT:
-            new_head = (coordinate_x + self.direction[0] * GRID_WIDTH,
+            new_head = (coordinate_x + self.direction[0] * GRID_SIZE,
                         (coordinate_y + self.direction[1]) % SCREEN_HEIGHT)
         if new_head in self.positions:
             self.reset()
