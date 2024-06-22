@@ -53,6 +53,7 @@ class GameObject:
         pass
 
     def draw_cell(self, pos):
+        """Общая отрисовка"""
         rect = (pygame.Rect(pos, (GRID_SIZE, GRID_SIZE)))
         pygame.draw.rect(screen, self.body_color, rect)
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
@@ -90,7 +91,6 @@ class Snake(GameObject):
         super().__init__()
         self.reset()
         self.body_color = SNAKE_COLOR
-        
 
     def draw(self):
         """Отрисовка Snake."""
