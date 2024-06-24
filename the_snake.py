@@ -97,7 +97,8 @@ class Snake(GameObject):
         for position in self.positions[:-1]:
             rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
             self.draw_cell(rect)
-        head_rect = pygame.Rect(self.get_head_position(), (GRID_SIZE, GRID_SIZE))
+        head_rect = pygame.Rect(
+            self.get_head_position(), (GRID_SIZE, GRID_SIZE))
         self.draw_cell(head_rect)
         if self.last:
             last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
