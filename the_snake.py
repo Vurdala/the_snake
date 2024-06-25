@@ -174,10 +174,8 @@ def main():
         snake.update_direction()
         if snake.get_head_position == apple.position:
             snake.lenght += 1
-            while True:
-                if apple.randomize_position() in snake.positions:
-                    apple.randomize_position()
-                    return False
+            while apple.randomize_position() in snake.positions:
+                apple.randomize_position()
 
         pygame.display.update()
 
